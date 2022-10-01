@@ -1,0 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rra.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bsaeed <bsaeed@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/27 06:12:51 by bsaeed            #+#    #+#             */
+/*   Updated: 2022/09/27 16:59:42 by bsaeed           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../push_swap.h"
+
+void	rra(t_stack *a)
+{
+	int	i;
+	int	top;
+	int	temp;
+	int	repp;
+
+	i = 0;
+	top = a->top;
+	repp = a->data[0];
+	while (top)
+	{
+		if (top == a->top)
+			temp = a->data[top];
+		ps_swap(&temp, &a->data[top - 1]);
+		top--;
+	}
+	a->data[a->top] = repp;
+	ft_printf("rra\n");
+}
