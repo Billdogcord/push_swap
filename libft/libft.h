@@ -6,7 +6,7 @@
 /*   By: bsaeed <bsaeed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 01:31:18 by bsaeed            #+#    #+#             */
-/*   Updated: 2022/09/16 16:23:48 by bsaeed           ###   ########.fr       */
+/*   Updated: 2022/10/14 03:04:24 by bsaeed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <stddef.h>
+# include <stdint.h>
 # include "printf/ft_printf.h"
 
 int		ft_atoi(const char *str);
@@ -26,6 +27,7 @@ int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
+int		is_space(int c);
 void	*ft_calloc(size_t n, size_t size);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);

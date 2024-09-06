@@ -6,7 +6,7 @@
 /*   By: bsaeed <bsaeed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 11:35:42 by bsaeed            #+#    #+#             */
-/*   Updated: 2022/09/16 16:27:49 by bsaeed           ###   ########.fr       */
+/*   Updated: 2022/10/11 16:01:17 by bsaeed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@ void	ft_uputnbr(unsigned int nb)
 {
 	if (nb == 4294967295)
 		ft_putstr("4294967295");
-	else if (nb < 0)
-	{
-		ft_putchar('-');
-		ft_uputnbr(-nb);
-	}
 	else if (nb >= 10)
 	{
 		ft_uputnbr(nb / 10);

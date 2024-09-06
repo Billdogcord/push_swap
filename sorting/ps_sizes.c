@@ -1,25 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_utils.c                                         :+:      :+:    :+:   */
+/*   ps_sizes.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsaeed <bsaeed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 19:48:30 by bsaeed            #+#    #+#             */
-/*   Updated: 2022/10/01 02:25:32 by bsaeed           ###   ########.fr       */
+/*   Created: 2022/10/11 15:34:58 by bsaeed            #+#    #+#             */
+/*   Updated: 2022/10/11 15:38:41 by bsaeed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void ps_swap(int *a, int *b)
-{
-	int	temp;
-
-	temp = *a;
-	*a = *b;
-	*b = temp;
-}
+#include "../push_swap.h"
 
 int	ps_numsmall(t_stack *a)
 {
@@ -45,23 +36,23 @@ int	ps_numsmall(t_stack *a)
 	return (index);
 }
 
-int	ps_numlarge(t_stack *a)
+int	ps_numlarge(t_stack *stack)
 {
 	int	i;
 	int	temp;
 	int	index;
 
-	i = a->top;
+	i = stack->top;
 	while (i >= 0)
 	{
-		if (i == a->top)
+		if (i == stack->top)
 		{
-			temp = a->data[i];
+			temp = stack->data[i];
 			index = i;
 		}
-		else if (temp < a->data[i])
+		else if (temp < stack->data[i])
 		{
-			temp  =a->data[i];
+			temp = stack->data[i];
 			index = i;
 		}
 		i--;
@@ -69,55 +60,31 @@ int	ps_numlarge(t_stack *a)
 	return (index);
 }
 
-void	ps_print(t_stack *stack)
+int	ps_second(t_stack *stack)
 {
 	int	i;
+	int	temp;
+	int	large;
+	int	index;
 
 	i = stack->top;
+	large = ps_numlarge(stack);
 	while (i >= 0)
 	{
-		ft_printf("%d = [%d]\n", stack->data[i], i);
+		if (i == stack->top)
+		{
+			temp = stack->data[i];
+			index = i;
+		}
+		else if (temp < stack->data[i])
+		{
+			if (stack->data[i] < stack->data[large])
+			{
+				temp = stack->data[i];
+				index = i;
+			}
+		}
 		i--;
 	}
-}
-
-int	ps_find_moves(t_stack *a, t_stack *chunk)
-{
-	int	i;
-
-	i = a->top;
-	while (i >= 0)
-	{
-		if (a->data[i] == chunk->data[chunk->top])
-			return (i);
-		i--;
-	}
-	return (0);
-}
-
-void	ps_move(t_stack *a, t_stack *b, t_stack *chunk)
-{
-	int	i;
-
-	i = ps_find_moves(a, chunk);
-	if (i >= a->top / 2)
-	{
-		while (i < a->top)
-		{
-			ra(a);
-			i++;
-		}
-		pb(a, b);
-		chunk->top--;
-	}
-	else
-	{
-		while (i >= 0)
-		{
-			rra(a);
-			i--;
-		}
-		pb(a, b);
-		chunk->top--;
-	}
+	return (index);
 }

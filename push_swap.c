@@ -6,11 +6,28 @@
 /*   By: bsaeed <bsaeed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 01:18:26 by bsaeed            #+#    #+#             */
-/*   Updated: 2022/10/01 02:31:05 by bsaeed           ###   ########.fr       */
+/*   Updated: 2022/10/14 03:25:42 by bsaeed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	check_args(int ac, char **av)
+{
+	int	bulb;
+	int	i;
+
+	bulb = 0;
+	i = 1;
+	while (i <= ac - 1)
+	{
+		if (av[i][0])
+			bulb++;
+		i++;
+	}
+	if (bulb == 0)
+		exit (EXIT_SUCCESS);
+}
 
 int	main(int ac, char **av)
 {
@@ -18,18 +35,9 @@ int	main(int ac, char **av)
 	t_stack	b;
 	t_stack	chunk;
 
-	if (ac <= 2)
-		ft_putstr_fd("[usage][not enough arguments]", 2);
+	if (ac <= 1)
+		exit (EXIT_SUCCESS);
+	check_args(ac, av);
 	ps_parsearg(&a, &b, av);
-	// ps_parsesort(&a, &b);
-	// ps_is_sorted(&a);
-	chunk.data = ps_sort_chunk(&a);
-	chunk.top = a.top;
-	// while (a.top >= 0)
-	// 	ps_move(&a, &b, &chunk);
-	// while (b.top >= 0)
-	// 	pa(&a, &b);
-	// chunk.top = a.top;
-	ps_print(&chunk);
-	return (0);
+	ps_parsesort(&a, &b, &chunk);
 }

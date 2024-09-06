@@ -6,7 +6,7 @@
 /*   By: bsaeed <bsaeed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 06:12:51 by bsaeed            #+#    #+#             */
-/*   Updated: 2022/09/27 16:59:42 by bsaeed           ###   ########.fr       */
+/*   Updated: 2022/10/11 16:01:41 by bsaeed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 void	rra(t_stack *a)
 {
-	int	i;
 	int	top;
 	int	temp;
 	int	repp;
 
-	i = 0;
 	top = a->top;
 	repp = a->data[0];
 	while (top)

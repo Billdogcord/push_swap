@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   rb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsaeed <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: bsaeed <bsaeed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/05 18:08:56 by bsaeed            #+#    #+#             */
-/*   Updated: 2022/04/07 01:34:06 by bsaeed           ###   ########.fr       */
+/*   Created: 2022/10/06 04:31:45 by bsaeed            #+#    #+#             */
+/*   Updated: 2022/10/11 15:22:36 by bsaeed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	rb(t_stack *b)
 {
-	size_t			i;
+	int	i;
+	int	temp;
+	int	repp;
+	int	top;
 
 	i = 0;
-	while (i < n)
+	top = b->top;
+	repp = b->data[top];
+	while (i < top)
 	{
-		if (((unsigned char *)s)[i] == (unsigned char)c)
-			return ((char *)&s[i]);
+		if (i == 0)
+			temp = b->data[i];
+		ps_swap(&temp, &b->data[i + 1]);
 		i++;
 	}
-	return (0);
+	b->data[0] = repp;
+	ft_printf("rb\n");
 }

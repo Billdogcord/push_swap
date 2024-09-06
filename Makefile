@@ -6,21 +6,22 @@
 #    By: bsaeed <bsaeed@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 16:36:35 by bsaeed            #+#    #+#              #
-#    Updated: 2022/09/28 04:34:34 by bsaeed           ###   ########.fr        #
+#    Updated: 2022/10/13 20:37:31 by bsaeed           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
 
 SRC		= operations/pa.c operations/pb.c operations/ra.c operations/rra.c\
-operations/sb.c operations/sa.c parsing/ps_checkarg.c ps_sort_small.c ps_sort_large.c ps_utils.c\
-push_swap.c parsing/ps_checksort.c
+operations/sb.c operations/sa.c parsing/ps_checkarg.c sorting/ps_sort_small.c sorting/ps_sort_large.c sorting/ps_utils.c operations/rr.c\
+push_swap.c parsing/ps_checksort.c operations/rb.c operations/rrb.c sorting/ps_optimizoor.c sorting/ps_sizes.c parsing/utils.c\
+
 
 OBJ		= $(SRC:.c=.o)
 
 LIBFT	= libft.a
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g3
 
 %.o : %.c
 				@printf "▁▂▃▄▅▆▇█ 𝙇𝙤𝙖𝙙𝙞𝙣𝙜…"

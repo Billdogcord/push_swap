@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ra.c                                               :+:      :+:    :+:   */
+/*   rr.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsaeed <bsaeed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/27 06:13:31 by bsaeed            #+#    #+#             */
-/*   Updated: 2022/10/13 18:17:34 by bsaeed           ###   ########.fr       */
+/*   Created: 2022/10/13 18:15:24 by bsaeed            #+#    #+#             */
+/*   Updated: 2022/10/13 18:19:36 by bsaeed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ra(t_stack *a)
+void	ra_rr(t_stack *a)
 {
 	int	i;
 	int	temp;
@@ -30,5 +30,31 @@ void	ra(t_stack *a)
 		i++;
 	}
 	a->data[0] = repp;
-	ft_printf("ra\n");
+}
+
+void	rb_rr(t_stack *b)
+{
+	int	i;
+	int	temp;
+	int	repp;
+	int	top;
+
+	i = 0;
+	top = b->top;
+	repp = b->data[top];
+	while (i < top)
+	{
+		if (i == 0)
+			temp = b->data[i];
+		ps_swap(&temp, &b->data[i + 1]);
+		i++;
+	}
+	b->data[0] = repp;
+}
+
+void	rr(t_stack *a, t_stack *b)
+{
+	rb_rr(b);
+	ra_rr(a);
+	ft_printf("rr\n");
 }

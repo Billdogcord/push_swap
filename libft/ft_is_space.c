@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
+/*   ft_is_space.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsaeed <bsaeed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/27 06:15:46 by bsaeed            #+#    #+#             */
-/*   Updated: 2022/10/10 05:58:00 by bsaeed           ###   ########.fr       */
+/*   Created: 2022/10/14 03:03:58 by bsaeed            #+#    #+#             */
+/*   Updated: 2022/10/14 03:05:36 by bsaeed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void	pb(t_stack *a, t_stack *b)
+int	is_space(int c)
 {
-	b->data[++b->top] = a->data[a->top];
-	a->top--;
-	ft_printf("pb\n");
+	if (c == 32 || c == 11)
+		return (1);
+	return (0);
 }
