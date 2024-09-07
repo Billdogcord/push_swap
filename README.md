@@ -112,7 +112,6 @@ ARG="3 2 5 1 4"; ./push_swap $ARG | ./checker $ARG
 - [42 Push_swap subject](https://cdn.intra.42.fr/pdf/pdf/42/en.subject.pdf)
 - [Sorting Algorithms Overview](https://en.wikipedia.org/wiki/Sorting_algorithm)
 
-## License
 
 This project is part of the 42 curriculum and is subject to the guidelines and rules set by the 42 network.
 ```
