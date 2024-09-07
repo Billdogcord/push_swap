@@ -1,3 +1,5 @@
+Here’s a sample `README.md` file you can use for your 42 project *Push_swap*. You can modify the details as needed.
+
 ```markdown
 # Push_swap
 
@@ -109,9 +111,6 @@ ARG="3 2 5 1 4"; ./push_swap $ARG | ./checker $ARG
 
 ## Resources
 
-- [42 Push_swap subject]([https://cdn.intra.42.fr/pdf/pdf/42/en.subject.pdf](https://cdn.intra.42.fr/pdf/pdf/133152/en.subject.pdf))
+- [42 Push_swap subject](https://cdn.intra.42.fr/pdf/pdf/133152/en.subject.pdf)
 - [Sorting Algorithms Overview](https://en.wikipedia.org/wiki/Sorting_algorithm)
-
-
-This project is part of the 42 curriculum and is subject to the guidelines and rules set by the 42 network.
 ```
