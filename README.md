@@ -1,7 +1,5 @@
-Here’s a sample `README.md` file you can use for your 42 project *Push_swap*. You can modify the details as needed.
-
 ```markdown
-# Push_swap
+Push_swap
 
 ## Overview
 
