@@ -109,7 +109,7 @@ ARG="3 2 5 1 4"; ./push_swap $ARG | ./checker $ARG
 
 ## Resources
 
-- [42 Push_swap subject](https://cdn.intra.42.fr/pdf/pdf/42/en.subject.pdf)
+- [42 Push_swap subject]([https://cdn.intra.42.fr/pdf/pdf/42/en.subject.pdf](https://cdn.intra.42.fr/pdf/pdf/133152/en.subject.pdf))
 - [Sorting Algorithms Overview](https://en.wikipedia.org/wiki/Sorting_algorithm)
 
 
